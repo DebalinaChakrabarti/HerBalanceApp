@@ -6,8 +6,8 @@ Feature: TC01_LaunchPage
 
     @MANUAL @HB-1 @SCRUM-1 
     Scenario: Check user able to land on the her balance app
-        Given User is in browser
-         When User enters the app url
+        Given User launches the browser
+         When User enters app url
          Then User should land on the launch page
 
     @MANUAL @HB-1 
@@ -35,10 +35,10 @@ Feature: TC01_LaunchPage
         Then User should see the page Header "Empower Your Weight Loss with HerBalance" in the launch page
 
     @MANUAL @HB-1 
-    Scenario: Verify visibility of subtitle in the launch page
+    Scenario: Verify visibility of text below header in the launch page
         Given User launches the browser
         When User enters app url
-        Then User should see the page subtitle "Hormonal shifts during your menstrual cycle affect metabolism, energy, cravings, and workouts." in the launch page
+        Then User should see the text below header "Hormonal shifts during your menstrual cycle affect metabolism, energy, cravings, and workouts. Aligning nutrition and fitness with these changes boosts weight loss and overall well-being." in the launch page
 
     @MANUAL @HB-1 
     Scenario: Verify visibility of cycle phase tabs
@@ -53,10 +53,10 @@ Feature: TC01_LaunchPage
         Then User should see recommendations text contains "Nutrition & meal planning" , "Exercise type & intensity" , "Stress management techniques", "Energy & mood optimization"
 
     @MANUAL @HB-1 
-    Scenario: Verify visibility of image in the launch page
+    Scenario: Verify visibility of images in the launch page
         Given User launches the browser
         When User enters app url
-        Then User should see clear image in the launch page
+        Then User should see clear images in the launch page
 
     @MANUAL @HB-1 
     Scenario: Verify LogIn button Redirection
@@ -71,10 +71,18 @@ Feature: TC01_LaunchPage
         Then User should be redirected to the Sign Up page
 
     @MANUAL @HB-1 
-    Scenario: Broken image check
+    Scenario Outline: Broken images check
         Given User launches the browser
-        When User sees image fails to load
-        Then User should see an alternative text "Image not available"
+        When User sees images fails to load
+        Then User should see an alternative text '<altText>'
+ 
+            Examples: 
+              | altText |                  																																						
+              | HerBalance Logo	|																																													
+              #| HerBalance Logo	|																																													
+              | Workout Exercises for Women	|																																													
+              | Hormone and Menstrual-Related Weightloss Web App	|																																													
+        
 
     @MANUAL @HB-1 
     Scenario: Verify "Start Your Personalized Journey" button is visible
@@ -104,18 +112,17 @@ Feature: TC01_LaunchPage
     Scenario Outline: Verify visibility of Texts in the launch page
         Given User launches the browser
         When User enters app url
-        Then User should see '<expectedField>' in the launch page
+        Then User should see '<expectedText>' in the launch page
         
             Examples: 
-              | expectedField |                  																																						
-              | Sync Your Weight Loss Journey With Your Cycle heading	|																																													
+              | expectedText |                  																																						
+              | Sync Your Weight Loss Journey With Your Cycle subtitle	|																																													
               | Achieve optimal results by syncing your weight loss process with your menstrual cycle. text |                      																									
-              | Cycle Tracking App heading |                       																																		
+              | Cycle Tracking App subtitle |                       																																		
               | Track your cycle and receive personalized recommendations to optimize your weight loss journey. text|                 																																									
-              | Understanding Your Cycle Phases heading  |  
-              | Ready to Transform Your Weight Loss Journey? heading  | 
-              | Join HerBalance today and discover how working with your body's natural cycle can make weight loss more effective, enjoyable, and sustainable. text	|
-              | © 2025 HerBalance. All rights reserved. text in the footer	|
+              | Understanding Your Cycle Phases subtitle  |  
+              | Ready to Transform Your Weight Loss Journey? subtitle  | 
+              | Join HerBalance today text	|
 
     @MANUAL @HB-1 
     Scenario: Verify the Launch page Title
@@ -134,4 +141,10 @@ Feature: TC01_LaunchPage
         Given User launches the browser
         When User enters app url
         Then User should see 4 card contains texts "Menstrual Phase","Follicular Phase","Ovulation Phase","Luteal Phase"
+
+    @MANUAL @HB-1 
+    Scenario: Check the presence of copyright text in the Footer of the launch page
+        Given User launches the browser
+        When User enters app url
+        Then User should see copyright text "© 2025 HerBalance. All rights reserved." in the footer
 

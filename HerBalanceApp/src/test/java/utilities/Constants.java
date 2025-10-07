@@ -20,10 +20,10 @@ public class Constants {
 	public static String baseURL = configProp.getString("BaseUrl");
 
 	public static String InvalidbaseUrl = configProp.getString("InvalidBaseURL");
-	 public static String userName =configProp.getString("username");
-	
-	public static String Passwd =configProp.getString("password");
-	
-	public static String ProgramURL=configProp.getString("ProgramUrl");
+//	 public static String userName =configProp.getString("username");
+//	
+//	public static String Passwd =configProp.getString("password");
+//	
+//	public static String ProgramURL=configProp.getString("ProgramUrl");
 }
 	
