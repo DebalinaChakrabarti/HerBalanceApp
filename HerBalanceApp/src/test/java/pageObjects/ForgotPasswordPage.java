@@ -102,38 +102,16 @@ public class ForgotPasswordPage  extends Constants {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput)).clear();
 			wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput)).sendKeys(email);
 
-//			clickSendResetCode();	
-//			JavascriptExecutor js = (JavascriptExecutor) driver;
-//			js.executeScript("arguments[0].click();", driver.findElement(saveClassBtn));
-
-//			// Verify Error Message Appears
-//			WebElement classTopicErrorMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//small[normalize-space()='Class Topic is required.']")));
-//			Assert.assertTrue(classTopicErrorMessage.isDisplayed(),"Class Topic Error message is not displayed!");
-//			Assert.assertEquals(classTopicErrorMessage.getText(),"Class Topic is required.","Error message mismatch!");
-//
 //			// Verify Field Highlighted in Red
 //			String borderColor = classTopicErrorMessage.getCssValue("border-color");
 //			Assert.assertTrue(borderColor.contains("rgb(255, 0, 0)"),"Field is not highlighted in red!");
 //
 //			System.out.println("Test Passed: Error message displayed & field highlighted!");
 			
-//		} 
-//		else{
-//			String email = data.get(1);
-//			String message = data.get(2);
-//			
-//			System.out.println("email,message " + email + " " + message );
-//			
-//			wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput)).clear();
-//			wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput)).sendKeys(email);
-//
-////			clickSendResetCode();	
-////			getEmailValidationMessage(email);
-//	}
 		return data;
 }
 	public void clickSendResetCode() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(sendResetCodeButton)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(sendResetCodeButton)).click();
 	}
 
 	

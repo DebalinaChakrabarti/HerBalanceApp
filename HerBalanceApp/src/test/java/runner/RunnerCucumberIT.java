@@ -23,7 +23,7 @@ import utilities.Constants;
 				tags=""
 )
 
-public class TestRunner extends AbstractTestNGCucumberTests{
+public class RunnerCucumberIT extends AbstractTestNGCucumberTests{
 
 //	@Override
 //    @DataProvider(parallel = true)
