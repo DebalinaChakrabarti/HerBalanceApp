@@ -39,8 +39,8 @@ public class ResetPasswordPage  extends Constants {
     private By backToLoginLink = By.xpath("//header//*[contains(text(),'Back to Login')]");
     private By successToast = By.xpath("//*[contains(text(),'password has been reset')]");
     private By resetCodeErrorMessage = By.xpath("//p[contains(text(),'Reset code must be 6 digits')]");
-    private By newPasswordErrorMessage = By.xpath(" //p[@id=':r1:-form-item-message']");
-    private By confirmPasswordErrorMessage = By.xpath("//p[@id=':r2:-form-item-message']");
+    private By newPasswordErrorMessage = By.xpath("//form[1]/div[2]/p[1]");
+    private By confirmPasswordErrorMessage = By.xpath("//form[1]/div[3]/p[1]");
     private By invalidOrExpiredTokenErrorMessage = By.xpath("//div[contains(text(),'Invalid or expired reset token')]");
 
     // Wait helper
