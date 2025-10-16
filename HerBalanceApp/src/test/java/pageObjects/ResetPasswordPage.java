@@ -99,14 +99,14 @@ public class ResetPasswordPage  extends Constants {
 			
 			System.out.println("resetCode,newPassword,confirmPassword,message " + resetCode + " " + newPassword + " " + confirmPassword + " " + message );
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(resetCodeInputField)).clear();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(resetCodeInputField)).sendKeys(resetCode);
+			waitFor(resetCodeInputField).clear();
+			waitFor(resetCodeInputField).sendKeys(resetCode);
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(newPasswordInputField)).clear();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(newPasswordInputField)).sendKeys(newPassword);
+			waitFor(newPasswordInputField).clear();
+			waitFor(newPasswordInputField).sendKeys(newPassword);
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(confirmPasswordInputField)).clear();
-			wait.until(ExpectedConditions.visibilityOfElementLocated(confirmPasswordInputField)).sendKeys(confirmPassword);
+			waitFor(confirmPasswordInputField).clear();
+			waitFor(confirmPasswordInputField).sendKeys(confirmPassword);
 
 
 //			// Verify Field Highlighted in Red

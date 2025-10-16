@@ -43,13 +43,11 @@ Feature: TC05_ResetPassword
 
     @AUTOMATED @HB-6 
     Scenario: Validate Navigation back to login
-        
         When User clicks the "Back to Login" link
         Then User should be redirected to the login page from Reset Password page
 
     @AUTOMATED @HB-6 
     Scenario Outline: Verify reset password with invalid inputs
-        
         When User clicks "Reset Password" button after entering values with "<sheetname>" and "<scenarioname>"
         Then User should see the error Message according to the "<sheetname>" and "<scenarioname>"
         Examples:
@@ -57,7 +55,7 @@ Feature: TC05_ResetPassword
           | ResetPassword | Submit with empty fields                    |
           | ResetPassword | Submit with invalid reset code              |
           | ResetPassword | Submit with mismatched passwords            |
-          | ResetPassword | Submit with weak password								 		|
+          | ResetPassword | Submit with password less than 6 characters |
           | ResetPassword | Reset code less than 6 digits               |
           | ResetPassword | Reset code expired                          |
 
